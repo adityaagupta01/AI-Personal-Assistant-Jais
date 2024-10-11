@@ -4,9 +4,9 @@ let voice=document.querySelector("#voice")
 
 function speak(text) {
     let text_speak = new SpeechSynthesisUtterance(text);
-    text_speak.rate = 1.35;
-    text_speak.pitch = 0.8;
-    text_speak.volume = 0.7;
+    text_speak.rate = 1;
+    text_speak.pitch = 1;
+    text_speak.volume = 1;
 
     // Get available voices
     const voices = window.speechSynthesis.getVoices();
