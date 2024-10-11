@@ -60,7 +60,7 @@ function takeCommand(message) {
     message = message.toLowerCase(); // Convert to lowercase for easier matching
 
     // Greetings
-    if (message.includes("hello")) || (message.includes("hey"))   {
+    if (message.includes("hello") || message.includes("hey")) {
         speak("Hello Sir, I am Jais, your personal assistant. How can I assist you today?");
     } 
     else if (message.includes("how are you")) {
@@ -148,7 +148,7 @@ function takeCommand(message) {
     else if (message.includes("who made you") || message.includes("who created you")) {
         speak("I was created by Aditya Raj Sir, also known as Aadi Sir."); 
     }
-    else if (message.includes("what is your name?") || message.includes("what is your name")) {
+    else if (message.includes("what is your name?") || message.includes("What is your name?")) {
         speak("I'm Jais, Your Personal Assistant");   
     } 
     else if(message.includes("open whatsapp")){
