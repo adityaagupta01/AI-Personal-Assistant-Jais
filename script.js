@@ -146,7 +146,10 @@ function takeCommand(message) {
         speak("Goodbye Sir, have a great day!");
     }
     else if (message.includes("who made you") || message.includes("who created you")) {
-        speak("I was created by Aditya Raj Sir, also known as Aadi Sir."); 
+        speak("I was created by Aditya Raj Sir, also known as Aadi Sir.");
+        speak("Aditya Sir Social Media Links are here")
+        window.open("https://linktr.ee/adityaagupta01")
+
     }
     else if (message.includes("what is your name?") || message.includes("What is your name?")) {
         speak("I'm Jais, Your Personal Assistant");   
