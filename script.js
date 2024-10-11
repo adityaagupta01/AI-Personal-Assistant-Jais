@@ -151,7 +151,7 @@ function takeCommand(message) {
         window.open("https://linktr.ee/adityaagupta01")
 
     }
-    else if (message.includes("what is your name?") || message.includes("What is your name?")) {
+    else if (message.includes("what is your name") || message.includes("What is your name")) {
         speak("I'm Jais, Your Personal Assistant");   
     } 
     else if(message.includes("open whatsapp")){
