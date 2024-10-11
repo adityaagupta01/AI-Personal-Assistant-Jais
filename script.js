@@ -148,7 +148,7 @@ function takeCommand(message) {
     else if (message.includes("who made you") || message.includes("who created you")) {
         speak("I was created by Aditya Raj Sir, also known as Aadi Sir."); 
     }
-    else if (message.includes("what is your name?") || message.includes("What is your name?")) {
+    else if (message.includes("what is your name?") || message.includes("what is your name")) {
         speak("I'm Jais, Your Personal Assistant");   
     } 
     else if(message.includes("open whatsapp")){
