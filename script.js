@@ -60,7 +60,7 @@ function takeCommand(message) {
     message = message.toLowerCase(); // Convert to lowercase for easier matching
 
     // Greetings
-    if (message.includes("hello")) {
+    if (message.includes("hello")) || (message.includes("hey"))   {
         speak("Hello Sir, I am Jais, your personal assistant. How can I assist you today?");
     } 
     else if (message.includes("how are you")) {
