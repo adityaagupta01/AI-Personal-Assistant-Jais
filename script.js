@@ -8,11 +8,11 @@ function speak(text) {
     text_speak.pitch = 1;
     text_speak.volume = 1;
 
-    // Get available voices
+    
     const voices = window.speechSynthesis.getVoices();
-    console.log("Available voices:", voices); // Log available voices for debugging
+    console.log("Available voices:", voices); 
 
-    // Try to find an Indian female voice
+    
     const indianFemaleVoice = voices.find(voice => voice.lang === "en-IN" && voice.name==="Microsoft Heera - English (India)");
 
     if (indianFemaleVoice) {
@@ -36,11 +36,11 @@ function wishme() {
     }
 }
 
-window.addEventListener('load', () => {
-    speechSynthesis.onvoiceschanged = () => {
-        wishme();
-    };
-});
+// window.addEventListener('load', () => {
+//     speechSynthesis.onvoiceschanged = () => {
+//         wishme();
+//     };
+// });
 let speechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition
 let recognition = new speechRecognition()
 recognition.onresult=(event)=>{
@@ -57,41 +57,52 @@ btn.addEventListener("click",()=>{
 function takeCommand(message) {
     btn.style.display="flex"
     voice.style.display="none"
-    message = message.toLowerCase(); // Convert to lowercase for easier matching
+    message = message.toLowerCase(); 
 
-    // Greetings
+    
     if (message.includes("hello") || message.includes("hey")) {
         speak("Hello Sir, I am Jais, your personal assistant. How can I assist you today?");
     } 
     else if (message.includes("how are you")) {
         speak("I am just a program, but thank you for asking. How can I assist you today?");
     }
+    else if (message.includes("good morning")) {
+        speak("good morning sir");
+    }
+    else if (message.includes("good afternoon")) {
+        speak("good afternoon sir");
+    }
+    else if (message.includes("good evening")) {
+        speak("good evening sir");
+    }
+    else if (message.includes("good night")) {
+        speak("good night sir");
+    }
     
-    // Time
     else if (message.includes("what is the time") || message.includes("current time")) {
         let currentTime = new Date().toLocaleTimeString();
         speak(`The current time is ${currentTime}`);
     }
     
-    // Date
+    
     else if (message.includes("what is the date") || message.includes("today's date")) {
         let currentDate = new Date().toDateString();
         speak(`Today's date is ${currentDate}`);
     }
     
-    // Weather (Assume you have some API or mock response)
+   
     else if (message.includes("what is the weather")) {
-        // Ideally, call a weather API here
+        
         speak("The weather today is sunny with a high of 30 degrees Celsius.");
     }
     
-    // Day of the week
+  
     else if (message.includes("what day is it")) {
         let currentDay = new Date().toLocaleDateString(undefined, { weekday: 'long' });
         speak(`Today is ${currentDay}`);
     }
 
-    // Simple Math
+ 
     else if (message.includes("calculate")) {
         try {
             let expression = message.replace("calculate", "").trim();
@@ -102,7 +113,7 @@ function takeCommand(message) {
         }
     }
 
-    // Jokes
+  
     else if (message.includes("tell me a joke")) {
         let jokes = [
             "Why don’t scientists trust atoms? Because they make up everything!",
@@ -113,7 +124,7 @@ function takeCommand(message) {
         speak(randomJoke);
     }
 
-    // Motivational Quotes
+   
     else if (message.includes("tell me a quote") || message.includes("inspire me")) {
         let quotes = [
             "The only way to do great work is to love what you do. - Steve Jobs",
@@ -124,14 +135,14 @@ function takeCommand(message) {
         speak(randomQuote);
     }
 
-    // Setting Reminders (Mock implementation)
+   
     else if (message.includes("remind me to")) {
         let reminder = message.replace("remind me to", "").trim();
         speak(`I will remind you to ${reminder}.`);
-        // Ideally, save this reminder to localStorage or a database for persistence
+        
     }
 
-    // Opening Websites (Mock for now)
+    
     else if (message.includes("open") && message.includes("google")) {
         speak("Opening Google.");
         window.open("https://www.google.com");
@@ -141,7 +152,7 @@ function takeCommand(message) {
         window.open("https://www.youtube.com");
     }
 
-    // Exit command
+   
     else if (message.includes("goodbye") || message.includes("exit")) {
         speak("Goodbye Sir, have a great day!");
     }
@@ -151,7 +162,7 @@ function takeCommand(message) {
         window.open("https://linktr.ee/adityaagupta01")
 
     }
-    else if (message.includes("what is your name") || message.includes("What is your name")) {
+    else if (message.includes("what is your name?") || message.includes("What is your name?")) {
         speak("I'm Jais, Your Personal Assistant");   
     } 
     else if(message.includes("open whatsapp")){
